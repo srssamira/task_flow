@@ -35,4 +35,16 @@ public class TaskController {
         TaskResponseDTO taskResponse = taskService.getTaskById(id);
         return ResponseEntity.ok(taskResponse);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TaskResponseDTO> updateTask(@PathVariable Long id, @RequestBody TaskCreateDTO taskUpdate) {
+        TaskResponseDTO taskResponse = taskService.updateTask(id, taskUpdate);
+        return ResponseEntity.ok(taskResponse);
+    }
+
+    @PatchMapping("/{id}/complete")
+    public ResponseEntity<TaskResponseDTO> markTaskAsCompleted(@PathVariable Long id) {
+        TaskResponseDTO taskResponse = taskService.markTaskAsCompleted(id);
+        return ResponseEntity.ok(taskResponse);
+    }
 }

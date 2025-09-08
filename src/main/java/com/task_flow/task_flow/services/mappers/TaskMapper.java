@@ -20,6 +20,7 @@ public class TaskMapper {
         taskEntity.setRecurrenceRule(taskCreate.getRecurrenceRule());
         taskEntity.setActualTime(taskCreate.getActualTime());
         taskEntity.setEstimatedTime(taskCreate.getEstimatedTime());
+        taskEntity.setReminder(taskCreate.getReminder());
         return taskEntity;
     }
 
@@ -37,6 +38,7 @@ public class TaskMapper {
         taskResponse.setRecurrenceRule(taskEntity.getRecurrenceRule());
         taskResponse.setActualTime(taskEntity.getActualTime());
         taskResponse.setEstimatedTime(taskEntity.getEstimatedTime());
+        taskResponse.setReminder(taskEntity.getReminder());
         return taskResponse;
     }
 }

@@ -37,4 +37,29 @@ public class TaskService {
                 .orElseThrow(() -> new RuntimeException("Task not found"));
         return TaskMapper.entityToResponse(taskEntity);
     }
+
+    public TaskResponseDTO updateTask(Long id, TaskCreateDTO taskUpdate) {
+        TaskEntity taskEntity = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Task not found"));
+        taskEntity.setTitle(taskUpdate.getTitle());
+        taskEntity.setDescription(taskUpdate.getDescription());
+        taskEntity.setCompleted(taskUpdate.isCompleted());
+        taskEntity.setDueDate(taskUpdate.getDueDate());
+        taskEntity.setPriority(taskUpdate.getPriority());
+        taskEntity.setCategory(taskUpdate.getCategory());
+        taskEntity.setComments(taskUpdate.getComments());
+        taskEntity.setRecurrenceRule(taskUpdate.getRecurrenceRule());
+        taskEntity.setActualTime(taskUpdate.getActualTime());
+        taskEntity.setEstimatedTime(taskUpdate.getEstimatedTime());
+        taskEntity = taskRepository.save(taskEntity);
+        return TaskMapper.entityToResponse(taskEntity);
+    }
+
+    public TaskResponseDTO markTaskAsCompleted(Long id) {
+        TaskEntity taskEntity = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Task not found"));
+        taskEntity.setCompleted(true);
+        taskEntity = taskRepository.save(taskEntity);
+        return TaskMapper.entityToResponse(taskEntity);
+    }
 }
