@@ -1,6 +1,4 @@
-package com.task_flow.task_flow.dtos;
-
-import lombok.Data;
+package com.task_flow.task_flow.dtos.tasks;
 
 import java.time.LocalDateTime;
 

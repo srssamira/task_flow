@@ -1,9 +1,10 @@
 package com.task_flow.task_flow.services.mappers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.task_flow.task_flow.dtos.TaskCreateDTO;
-import com.task_flow.task_flow.dtos.TaskResponseDTO;
+import com.task_flow.task_flow.dtos.tasks.TaskCreateDTO;
+import com.task_flow.task_flow.dtos.tasks.TaskResponseDTO;
 import com.task_flow.task_flow.entities.TaskEntity;
+
+import java.util.List;
 
 public class TaskMapper {
 

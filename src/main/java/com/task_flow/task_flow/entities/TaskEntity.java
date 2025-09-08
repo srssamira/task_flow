@@ -1,9 +1,6 @@
 package com.task_flow.task_flow.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -25,6 +22,10 @@ public class TaskEntity {
     private int estimatedTime; // Estimated time to complete the task in minutes
     private int actualTime; // Actual time spent on the task in minutes
     private String reminder; // Reminder settings, e.g., "2024-12-31T09:00"
+
+    @ManyToOne
+    @JoinColumn(name = "report_entity_id")
+    private ReportEntity report;
 
     public TaskEntity(){
     }

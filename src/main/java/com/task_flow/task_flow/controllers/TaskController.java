@@ -1,7 +1,7 @@
 package com.task_flow.task_flow.controllers;
 
-import com.task_flow.task_flow.dtos.TaskCreateDTO;
-import com.task_flow.task_flow.dtos.TaskResponseDTO;
+import com.task_flow.task_flow.dtos.tasks.TaskCreateDTO;
+import com.task_flow.task_flow.dtos.tasks.TaskResponseDTO;
 import com.task_flow.task_flow.services.TaskService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
