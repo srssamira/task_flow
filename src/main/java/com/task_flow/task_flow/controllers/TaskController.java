@@ -4,10 +4,9 @@ import com.task_flow.task_flow.dtos.TaskCreateDTO;
 import com.task_flow.task_flow.dtos.TaskResponseDTO;
 import com.task_flow.task_flow.services.TaskService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/tasks")
@@ -23,5 +22,17 @@ public class TaskController {
     public ResponseEntity<TaskResponseDTO> createTask(@RequestBody TaskCreateDTO taskCreate) {
         TaskResponseDTO taskResponse = taskService.createTask(taskCreate);
         return ResponseEntity.status(201).body(taskResponse);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<TaskResponseDTO>> getTasks() {
+        List<TaskResponseDTO> tasks = taskService.getTasks();
+        return ResponseEntity.ok(tasks);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TaskResponseDTO> getTaskById(@PathVariable Long id) {
+        TaskResponseDTO taskResponse = taskService.getTaskById(id);
+        return ResponseEntity.ok(taskResponse);
     }
 }

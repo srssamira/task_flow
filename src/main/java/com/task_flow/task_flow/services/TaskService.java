@@ -7,6 +7,9 @@ import com.task_flow.task_flow.repositories.TaskRepository;
 import com.task_flow.task_flow.services.mappers.TaskMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class TaskService {
 
@@ -20,5 +23,18 @@ public class TaskService {
         TaskEntity taskEntity = TaskMapper.createToEntity(taskCreate);
         taskEntity = taskRepository.save(taskEntity);
         return TaskMapper.entityToResponse((taskEntity));
+    }
+
+    public List<TaskResponseDTO> getTasks() {
+        List<TaskEntity> taskEntities = taskRepository.findAll();
+        return taskEntities.stream()
+                .map(TaskMapper::entityToResponse)
+                .collect(Collectors.toList());
+    }
+
+    public TaskResponseDTO getTaskById(Long id) {
+        TaskEntity taskEntity = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Task not found"));
+        return TaskMapper.entityToResponse(taskEntity);
     }
 }
