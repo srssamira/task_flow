@@ -62,4 +62,10 @@ public class TaskService {
         taskEntity = taskRepository.save(taskEntity);
         return TaskMapper.entityToResponse(taskEntity);
     }
+
+    public void deleteTask(Long id) {
+        TaskEntity taskEntity = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Task not found"));
+        taskRepository.delete(taskEntity);
+    }
 }
