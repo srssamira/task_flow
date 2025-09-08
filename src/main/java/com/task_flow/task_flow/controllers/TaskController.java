@@ -2,7 +2,7 @@ package com.task_flow.task_flow.controllers;
 
 import com.task_flow.task_flow.dtos.tasks.TaskCreateDTO;
 import com.task_flow.task_flow.dtos.tasks.TaskResponseDTO;
-import com.task_flow.task_flow.services.TaskService;
+import com.task_flow.task_flow.services.impl.TaskScheduling;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,45 +12,45 @@ import java.util.List;
 @RequestMapping("/tasks")
 public class TaskController {
 
-    TaskService taskService;
+    TaskScheduling taskScheduling;
 
-    public TaskController(TaskService taskService) {
-        this.taskService = taskService;
+    public TaskController(TaskScheduling taskScheduling) {
+        this.taskScheduling = taskScheduling;
     }
 
     @PostMapping
     public ResponseEntity<TaskResponseDTO> createTask(@RequestBody TaskCreateDTO taskCreate) {
-        TaskResponseDTO taskResponse = taskService.createTask(taskCreate);
+        TaskResponseDTO taskResponse = taskScheduling.createTask(taskCreate);
         return ResponseEntity.status(201).body(taskResponse);
     }
 
     @GetMapping
     public ResponseEntity<List<TaskResponseDTO>> getTasks() {
-        List<TaskResponseDTO> tasks = taskService.getTasks();
+        List<TaskResponseDTO> tasks = taskScheduling.getTasks();
         return ResponseEntity.ok(tasks);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<TaskResponseDTO> getTaskById(@PathVariable Long id) {
-        TaskResponseDTO taskResponse = taskService.getTaskById(id);
+        TaskResponseDTO taskResponse = taskScheduling.getTaskById(id);
         return ResponseEntity.ok(taskResponse);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<TaskResponseDTO> updateTask(@PathVariable Long id, @RequestBody TaskCreateDTO taskUpdate) {
-        TaskResponseDTO taskResponse = taskService.updateTask(id, taskUpdate);
+        TaskResponseDTO taskResponse = taskScheduling.updateTask(id, taskUpdate);
         return ResponseEntity.ok(taskResponse);
     }
 
     @PatchMapping("/{id}/complete")
     public ResponseEntity<TaskResponseDTO> markTaskAsCompleted(@PathVariable Long id) {
-        TaskResponseDTO taskResponse = taskService.markTaskAsCompleted(id);
+        TaskResponseDTO taskResponse = taskScheduling.markTaskAsCompleted(id);
         return ResponseEntity.ok(taskResponse);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
-        taskService.deleteTask(id);
+        taskScheduling.deleteTask(id);
         return ResponseEntity.noContent().build();
     }
 }
