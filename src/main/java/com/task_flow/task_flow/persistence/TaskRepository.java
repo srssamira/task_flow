@@ -1,8 +1,7 @@
-package com.task_flow.task_flow.repositories;
+package com.task_flow.task_flow.persistence;
 
-import com.task_flow.task_flow.entities.TaskEntity;
+import com.task_flow.task_flow.domain.entities.TaskEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;

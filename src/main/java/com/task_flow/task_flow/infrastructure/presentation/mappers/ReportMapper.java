@@ -1,7 +1,7 @@
-package com.task_flow.task_flow.services.mappers;
+package com.task_flow.task_flow.infrastructure.presentation.mappers;
 
-import com.task_flow.task_flow.dtos.report.ReportResponse;
-import com.task_flow.task_flow.entities.ReportEntity;
+import com.task_flow.task_flow.application.dtos.report.ReportResponse;
+import com.task_flow.task_flow.domain.entities.ReportEntity;
 
 public class ReportMapper {
 

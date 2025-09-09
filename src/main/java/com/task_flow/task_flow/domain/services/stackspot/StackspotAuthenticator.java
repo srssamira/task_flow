@@ -1,4 +1,4 @@
-package com.task_flow.task_flow.services.stackspot;
+package com.task_flow.task_flow.domain.services.stackspot;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;

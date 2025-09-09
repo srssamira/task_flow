@@ -1,4 +1,4 @@
-package com.task_flow.task_flow.dtos.tasks;
+package com.task_flow.task_flow.application.dtos.tasks;
 
 import java.time.LocalDateTime;
 

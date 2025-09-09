@@ -1,7 +1,7 @@
-package com.task_flow.task_flow.services;
+package com.task_flow.task_flow.domain.services;
 
-import com.task_flow.task_flow.dtos.tasks.TaskCreateDTO;
-import com.task_flow.task_flow.dtos.tasks.TaskResponseDTO;
+import com.task_flow.task_flow.application.dtos.tasks.TaskCreateDTO;
+import com.task_flow.task_flow.application.dtos.tasks.TaskResponseDTO;
 
 import java.util.List;
 

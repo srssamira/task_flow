@@ -1,6 +1,6 @@
-package com.task_flow.task_flow.dtos.report;
+package com.task_flow.task_flow.application.dtos.report;
 
-import com.task_flow.task_flow.entities.TaskEntity;
+import com.task_flow.task_flow.domain.entities.TaskEntity;
 
 import java.util.List;
 

@@ -1,10 +1,8 @@
-package com.task_flow.task_flow.services.mappers;
+package com.task_flow.task_flow.infrastructure.presentation.mappers;
 
-import com.task_flow.task_flow.dtos.tasks.TaskCreateDTO;
-import com.task_flow.task_flow.dtos.tasks.TaskResponseDTO;
-import com.task_flow.task_flow.entities.TaskEntity;
-
-import java.util.List;
+import com.task_flow.task_flow.application.dtos.tasks.TaskCreateDTO;
+import com.task_flow.task_flow.application.dtos.tasks.TaskResponseDTO;
+import com.task_flow.task_flow.domain.entities.TaskEntity;
 
 public class TaskMapper {
 

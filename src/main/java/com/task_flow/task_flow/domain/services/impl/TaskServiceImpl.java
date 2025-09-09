@@ -1,11 +1,11 @@
-package com.task_flow.task_flow.services.impl;
+package com.task_flow.task_flow.domain.services.impl;
 
-import com.task_flow.task_flow.dtos.tasks.TaskCreateDTO;
-import com.task_flow.task_flow.dtos.tasks.TaskResponseDTO;
-import com.task_flow.task_flow.entities.TaskEntity;
-import com.task_flow.task_flow.repositories.TaskRepository;
-import com.task_flow.task_flow.services.TaskService;
-import com.task_flow.task_flow.services.mappers.TaskMapper;
+import com.task_flow.task_flow.application.dtos.tasks.TaskCreateDTO;
+import com.task_flow.task_flow.application.dtos.tasks.TaskResponseDTO;
+import com.task_flow.task_flow.domain.entities.TaskEntity;
+import com.task_flow.task_flow.persistence.TaskRepository;
+import com.task_flow.task_flow.domain.services.TaskService;
+import com.task_flow.task_flow.infrastructure.presentation.mappers.TaskMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class TaskScheduling implements TaskService {
+public class TaskServiceImpl implements TaskService {
 
     TaskRepository taskRepository;
 
-    public TaskScheduling(TaskRepository taskRepository) {
+    public TaskServiceImpl(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
 

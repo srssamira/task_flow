@@ -1,6 +1,7 @@
-package com.task_flow.task_flow.controllers;
+package com.task_flow.task_flow.infrastructure.presentation.controllers;
 
-import com.task_flow.task_flow.services.ReportService;
+import com.task_flow.task_flow.domain.services.ReportService;
+import com.task_flow.task_flow.domain.services.impl.ReportServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

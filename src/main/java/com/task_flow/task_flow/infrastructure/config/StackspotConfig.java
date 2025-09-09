@@ -1,4 +1,4 @@
-package com.task_flow.task_flow.infra;
+package com.task_flow.task_flow.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

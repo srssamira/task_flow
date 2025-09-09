@@ -1,8 +1,8 @@
-package com.task_flow.task_flow.services.stackspot;
+package com.task_flow.task_flow.domain.services.stackspot;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.task_flow.task_flow.entities.TaskEntity;
+import com.task_flow.task_flow.domain.entities.TaskEntity;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;

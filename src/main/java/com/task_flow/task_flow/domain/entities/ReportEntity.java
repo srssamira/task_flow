@@ -1,4 +1,4 @@
-package com.task_flow.task_flow.entities;
+package com.task_flow.task_flow.domain.entities;
 
 import jakarta.persistence.*;
 

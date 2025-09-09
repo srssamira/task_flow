@@ -1,33 +1,23 @@
-package com.task_flow.task_flow.entities;
-
-import jakarta.persistence.*;
+package com.task_flow.task_flow.application.dtos.tasks;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class TaskEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TaskResponseDTO {
     private Long id;
     private String title;
     private String description;
     private boolean completed;
     private LocalDateTime createdAt;
     private LocalDateTime dueDate;
-    private int priority; // 1 - Low, 2 - Medium, 3 - High
-    private String category; // e.g., Work, Personal, Shopping
-    private String comments; // Comments or notes related to the task
-    private String recurrenceRule; // e.g., "FREQ=DAILY;INTERVAL=1" for daily tasks
-    private int estimatedTime; // Estimated time to complete the task in minutes
-    private int actualTime; // Actual time spent on the task in minutes
-    private String reminder; // Reminder settings, e.g., "2024-12-31T09:00"
+    private int priority;
+    private String category;
+    private String comments;
+    private String recurrenceRule;
+    private int estimatedTime;
+    private int actualTime;
+    private String reminder;
 
-    @ManyToOne
-    @JoinColumn(name = "report_entity_id")
-    private ReportEntity report;
-
-    public TaskEntity(){
+    public TaskResponseDTO() {
     }
 
     public Long getId() {

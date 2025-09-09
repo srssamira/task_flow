@@ -1,18 +1,19 @@
-package com.task_flow.task_flow.services;
+package com.task_flow.task_flow.domain.services.impl;
 
-import com.task_flow.task_flow.dtos.report.ReportResponse;
-import com.task_flow.task_flow.entities.ReportEntity;
-import com.task_flow.task_flow.entities.TaskEntity;
-import com.task_flow.task_flow.repositories.TaskRepository;
-import com.task_flow.task_flow.services.mappers.ReportMapper;
-import com.task_flow.task_flow.services.stackspot.QuickCommandService;
+import com.task_flow.task_flow.application.dtos.report.ReportResponse;
+import com.task_flow.task_flow.domain.entities.ReportEntity;
+import com.task_flow.task_flow.domain.entities.TaskEntity;
+import com.task_flow.task_flow.domain.services.ReportService;
+import com.task_flow.task_flow.domain.services.stackspot.QuickCommandService;
+import com.task_flow.task_flow.persistence.TaskRepository;
+import com.task_flow.task_flow.infrastructure.presentation.mappers.ReportMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class ReportService {
+public class ReportServiceImpl implements ReportService {
 
     private final QuickCommandService quickCommandService;
     private final TaskRepository taskRepository;
@@ -21,11 +22,12 @@ public class ReportService {
     private static final int POLLING_INTERVAL_MS = 2000; // 2 segundos
     private static final int POLLING_TIMEOUT_MS = 20000; // 20 segundos
 
-    public ReportService(QuickCommandService quickCommandService, TaskRepository taskRepository) {
+    public ReportServiceImpl(QuickCommandService quickCommandService, TaskRepository taskRepository) {
         this.quickCommandService = quickCommandService;
         this.taskRepository = taskRepository;
     }
 
+    @Override
     public ReportResponse createReport(int days) {
         try {
             ReportEntity reportEntity = generateReport(days);
