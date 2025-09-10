@@ -1,0 +1,182 @@
+/* Arquivo: frontend/src/App.css (Versão Completa e Corrigida) */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f7f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+
+  /* Regras para centralização */
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  /* A margem 'auto' ajuda na compatibilidade com a centralização do body */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  /* Garante que o container não encolha demais */
+  width: 100%; 
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+.task-form {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select,
+.task-form button {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: inherit; /* Garante que os inputs usem a mesma fonte do body */
+}
+
+.task-form button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.task-form button:hover {
+  background-color: #2980b9;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* separação entre blocos */
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.task-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task-content h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.task-content p {
+  margin: 0 0 10px 0;
+  color: #555;
+}
+
+.task-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: #666;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+
+.task-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ecf0f1;
+  color: #333;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.task-actions button:hover {
+  background-color: #bdc3c7;
+}
+
+.task-actions .delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.task-actions .delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* ================== PRIORIDADES ================== */
+
+/* Alta prioridade */
+.priority-1 {
+  border-left: 6px solid #e74c3c;
+  background-color: #fdecea;
+}
+
+/* Prioridade 2 */
+.priority-2 {
+  border-left: 6px solid #e67e22;
+  background-color: #fff3e6;
+}
+
+/* Normal */
+.priority-3 {
+  border-left: 6px solid #3498db;
+  background-color: #eaf4fd;
+}
+
+/* Prioridade 4 */
+.priority-4 {
+  border-left: 6px solid #27ae60;
+  background-color: #e9f9f0;
+}
+
+/* Baixa prioridade */
+.priority-5 {
+  border-left: 6px solid #7f8c8d;
+  background-color: #f5f6f7;
+}
+
+/* Ajuste para destacar concluídas */
+.task-item.completed {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
