@@ -5,11 +5,14 @@ import com.task_flow.task_flow.application.dtos.tasks.TaskResponseDTO;
 import com.task_flow.task_flow.domain.services.TaskService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/tasks")
+@CrossOrigin(origins = "http://localhost:5173")
 public class TaskController {
 
     TaskService taskService;
