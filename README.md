@@ -75,13 +75,8 @@ Essa funcionalidade demonstra a integração com serviços externos. O `ReportCo
 
 ## 🔒 Segurança e Configuração
 
-* **`StackspotAuthenticator`**: Centraliza os detalhes de autenticação do Stackspot (`CLIENT_ID`, `CLIENT_KEY`, `REALM`), promovendo a separação de preocupações.
 * **`QuickCommandService`**: Lida diretamente com a obtenção e uso do token de acesso e a comunicação com a API externa.
 * **`StackspotConfig`**: Centraliza a criação de *beans*, como o `RestTemplate`, que é crucial para as chamadas HTTP a serviços externos e disponível para injeção de dependência em toda a aplicação.
-
-Para inserir as imagens na documentação, você pode usar a sintaxe Markdown para imagens, que é bem simples. A estrutura básica é `![Texto alternativo da imagem](caminho_ou_URL_da_imagem)`.
-
-Como as imagens já foram carregadas, você pode referenciá-las diretamente. A seguir, mostro como a documentação ficaria com as imagens inseridas nos pontos corretos.
 
 -----
 
