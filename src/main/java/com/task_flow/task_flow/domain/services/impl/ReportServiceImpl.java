@@ -19,8 +19,8 @@ public class ReportServiceImpl implements ReportService {
     private final TaskRepository taskRepository;
 
     // Parâmetros do polling
-    private static final int POLLING_INTERVAL_MS = 2000; // 2 segundos
-    private static final int POLLING_TIMEOUT_MS = 20000; // 20 segundos
+    private static final int POLLING_INTERVAL_MS = 10000; // 10 segundos
+    private static final int POLLING_TIMEOUT_MS = 50000; // 50 segundos
 
     public ReportServiceImpl(QuickCommandService quickCommandService, TaskRepository taskRepository) {
         this.quickCommandService = quickCommandService;

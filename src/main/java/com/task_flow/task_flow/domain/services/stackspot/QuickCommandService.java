@@ -17,7 +17,6 @@ public class QuickCommandService {
 
     private static final String CLIENT_ID = "4869b6df-aed6-4f04-a55c-93bc7a8113fb";
     private static final String CLIENT_SECRET = "3SEH5Z4HLNqMs3e3pjS5tWxr58jbIBy1lZ30F1X8lnzDY8r7dKS488fi9UsM3IIr";
-    private static final String REALM = "zup";
     private static final String TOKEN_URL = "https://idm.stackspot.com/zup/oidc/oauth/token";
     private static final String OPTIMIZATION_URL = "https://genai-code-buddy-api.stackspot.com/v1/quick-commands/create-execution/suggest-optimization";
     private static final String CALLBACK_URL = "https://genai-code-buddy-api.stackspot.com/v1/quick-commands/callback/";
@@ -63,8 +62,7 @@ public class QuickCommandService {
         try {
             String jsonInput = objectMapper.writeValueAsString(body);
             HttpEntity<String> requestEntity = new HttpEntity<>(jsonInput, headers);
-            String response = restTemplate.postForObject(OPTIMIZATION_URL, requestEntity, String.class);
-            return response;
+            return restTemplate.postForObject(OPTIMIZATION_URL, requestEntity, String.class);
         } catch (Exception e) {
             e.printStackTrace();
             return "An error occurred: " + e.getMessage();
