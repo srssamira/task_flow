@@ -94,6 +94,7 @@ A arquitetura é dividida em quatro camadas principais, onde cada uma tem uma re
 * **Camada de Persistência (`persistence`)**: Responsável pela interação com o banco de dados. Encapsula toda a lógica de acesso a dados.
 
 **Diagrama de Arquitetura em Camadas:**
+
 ![arquitetura-em-camadas](assets/WhatsApp%20Image%202025-09-10%20at%2000.01.50.jpeg)
 -----
 
